@@ -1,0 +1,257 @@
+:root {
+    --text-base: #afb6c2;
+    --text-title: #d4ccb6;
+    --background: #191816;
+    --form-background: #24221f;
+    --primary-color: #ffc632;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+body {
+    background: var(--background);
+    font-family: Poppins;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+    height: 100vh;
+    width: 100vw;
+    
+    overflow: hidden;
+}
+
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.form-content {
+    display: flex;
+    justify-content: center;
+    padding: 55px 119px;
+
+    background-color: var(--form-background);
+    border-radius: 5px;
+}
+
+.form-content form h1 {
+    display: flex;
+    color: var(--text-title);
+    font-size: 24px;
+    gap: 10px;
+}
+
+.form-content form p {
+    font-family: Roboto;
+    font-weight: 500;
+    color: var(--text-base);
+    margin-top: 5px;
+}
+
+.form-content form .form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+}
+
+.form-content form .form label {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text-base);
+}
+
+.form-content form .form #email, #password {
+    width: 335px;
+    height: 44px;
+    padding: 14px 37px;
+    background: transparent;
+    border: 1px solid #868686;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: var(--text-base);
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 400;
+    margin-inline: -20px;
+}
+
+.form-content form .form #email:focus, #password:focus {
+    border: 2px solid var(--primary-color);
+    outline: none;
+}
+
+.form-content form .form .input {
+    display: flex;
+    align-items: center;
+}
+
+.form-content form .form img {
+    position: relative;
+    z-index: 999;
+    right: -10px;
+    top: -8px;
+}
+
+.remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 0;
+}
+
+.remember a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.form-content form .form .checkbox label {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    color: #A9AFB9;
+}
+
+.containerInput {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.containerInput input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.check {
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 1px solid var(--text-base);
+    position: absolute;
+    border-radius: 4px;
+}
+
+.containerInput input:checked ~ .check {
+    background-color: var(--primary-color);
+    border: solid var(--primary-color);
+} 
+
+.containerInput .check:after {
+    top: -1px;
+    left: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.check:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.containerInput input:checked ~ .check:after {
+    display: block;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+
+    object-position: center;
+    object-fit: cover;
+}
+
+button {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+
+    background-color: var(--primary-color);
+    padding: 12px 0;
+    border-radius: 5px;
+
+    margin-top: 20px;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+.register a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.register a span {
+    font-weight: 600;
+}
+
+#hidden-show {
+    position: relative;
+    top: 0px;
+    left: -25px;
+
+    cursor: pointer;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+@media (max-width: 1228px) {
+    .container {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .banner {
+        display: none;
+    }
+}
